@@ -20,19 +20,28 @@ and more.
    appendix
 
 .. note::
-   For full API details (to be added later), see the **API Reference** section
-   in the online docs at https://yourusername.github.io/vdwtoolkit.
+   For full API details, see the **API Reference** section or visit the online
+   docs at https://yourusername.github.io/vdwtoolkit.
 
 Overview
 --------
 
-…
+vdW-Toolkit enables researchers to:
+
+* **Search commensurate supercells** for multilayer hexagonal lattices under strain
+  and twist constraints.
+* **Generate moiré patterns** by twisting and stacking 2D material layers with
+  arbitrary angles and offsets.
+* **Launch and manage simulations** across classical (LAMMPS, GPUMD) and quantum
+  (VASP) engines.
+* **Post-process trajectories** to extract structural metrics (bond lengths,
+  angles, deformation) and thermal properties (spectral heat flux, registry index).
 
 Quick Links
 -----------
 
-* :doc:`installation`
-* :doc:`quickstart`
-* :doc:`tutorials`
-* :doc:`faq`
-* :doc:`appendix`
+- **Installation**: :doc:`installation`  
+- **Quick Start**: :doc:`quickstart`  
+- **Tutorials**: :doc:`tutorials`  
+- **FAQ**: :doc:`faq`  
+- **Appendix**: :doc:`appendix`  
