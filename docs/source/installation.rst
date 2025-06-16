@@ -1,53 +1,74 @@
-# Installation
+.. _installation:
+
+Installation
+============
 
 This section describes how to install **vdW-Toolkit**, including system requirements and troubleshooting tips.
 
-## System Requirements
+System Requirements
+-------------------
 
-* Python 3.8 or later
-* A virtual environment is recommended (venv, conda, etc.)
+- **Python** 3.8 or later  
+- A virtual environment is recommended (e.g., `venv`, `conda`)
 
-## Dependencies
+Dependencies
+------------
 
-* **Typer**: for command-line interface
-* **ASE**: for atomic structure handling
-* **NumPy**: for numerical operations
+- **Typer**: command-line interface  
+- **ASE**: atomic structure handling  
+- **NumPy**: numerical operations  
 
-## Installation Steps
+Installation Steps
+------------------
 
-1. **Install from PyPI:**
-
-   .. code-block:: bash
-
-   pip install typer\[all] ase numpy
-   pip install vdwtoolkit
-
-2. **Install in editable mode from source:**
+1. **Install from PyPI**:
 
    .. code-block:: bash
 
-   git clone [https://github.com/yourusername/vdwtoolkit.git](https://github.com/yourusername/vdwtoolkit.git)
-   cd vdwtoolkit
-   pip install -e .
+      pip install "typer[all]" ase numpy
+      pip install vdwtoolkit
 
-## Optional Components
+2. **Install in editable mode from source**:
 
-* **VASP Interface:** Ensure VASP executables are installed and set the `VASP_CMD` environment variable.
-* **LAMMPS Interface:** Install LAMMPS and add the `lmp` command to your `PATH`.
-* **GPUMD Interface:** Install GPUMD and add its executable to your `PATH`.
+   .. code-block:: bash
 
-## Troubleshooting
+      git clone https://github.com/yourusername/vdwtoolkit.git
+      cd vdwtoolkit
+      pip install -e .
 
-* **Dependency conflicts:** Upgrade dependencies:
+Optional Components
+-------------------
+
+- **VASP Interface**  
+  Ensure VASP executables are installed and that the `VASP_CMD` environment variable is set, for example:
 
   .. code-block:: bash
 
-  pip install --upgrade typer ase numpy
+     export VASP_CMD="mpirun -np 16 vasp_std"
 
-* **Command not found:** Activate your virtual environment or add the executable paths to `PATH`.
+- **LAMMPS Interface**  
+  Install LAMMPS and add the `lmp` executable to your `PATH`.
 
-* **Permission denied:** Use `--user` flag or a virtual environment; avoid global sudo installation.
+- **GPUMD Interface**  
+  Install GPUMD and add its executable to your `PATH`.
 
-* **Build errors:** Install system build tools (e.g., `build-essential`, `gcc`, `python3-dev`).
+Troubleshooting
+---------------
 
-If issues persist, please consult the GitHub repository issues or contact the maintainers.
+- **Dependency conflicts**  
+  Upgrade dependencies:
+
+  .. code-block:: bash
+
+     pip install --upgrade "typer[all]" ase numpy
+
+- **Command not found**  
+  Activate your virtual environment or add the toolkit’s scripts directory to your `PATH`.
+
+- **Permission denied**  
+  Use the `--user` flag or work inside a virtual environment; avoid global `sudo` installs.
+
+- **Build errors**  
+  Install system build tools (e.g., `build-essential`, `gcc`, `python3-dev`).
+
+If issues persist, please consult the GitHub repository’s [issue tracker](https://github.com/yourusername/vdwtoolkit/issues) or contact the maintainers.  

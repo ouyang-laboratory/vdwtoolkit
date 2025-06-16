@@ -1,91 +1,95 @@
-# API Reference
+API Reference
+=============
 
 This section provides detailed documentation of core classes and functions in **vdW-Toolkit**, including constructor signatures, parameters, methods, and return values.
 
-## Builder Module
+Builder Module
+--------------
 
 .. autoclass:: vdwtoolkit.builder.CommensurateFinder
-\:members:
-\:show-inheritance:
+   :members:
+   :show-inheritance:
 
 **Constructor**::
 
-```
-  CommensurateFinder(
-    lattice1: Tuple[float, float],
-    lattice2: Tuple[float, float],
-    max_n: int = 10,
-    tol_strain: float = 1e-3
-  )
-```
+   CommensurateFinder(
+       lattice1: Tuple[float, float],
+       lattice2: Tuple[float, float],
+       max_n: int = 10,
+       tol_strain: float = 1e-3
+   )
 
 **Parameters**:
 
-* `lattice1`: Lattice constants (a, b) for layer 1.
-* `lattice2`: Lattice constants (a, b) for layer 2.
-* `max_n`: Maximum multiplier for supercell size.
-* `tol_strain`: Maximum allowed strain (fractional).
+* `lattice1` – Lattice constants (a, b) for layer 1.  
+* `lattice2` – Lattice constants (a, b) for layer 2.  
+* `max_n` – Maximum multiplier for supercell size.  
+* `tol_strain` – Maximum allowed strain (fractional).
 
 **Methods**:
 
-* `find() -> List[Tuple[Tuple[int, int, int, int], float]]`
+* `find() -> List[Tuple[Tuple[int, int, int, int], float]]`  
+  Returns a list of (cell parameters, strain) pairs.
 
-  * Returns a list of (cell parameters, strain) pairs.
+* `build_model(cell_params: Tuple[int, int, int, int], angle: float, offset: Tuple[float, float] = (0, 0)) -> Structure`  
+  Builds a twisted heterostructure with the given cell parameters, twist angle, and lateral offset.
 
-* `build_model(cell_params: Tuple[int, int, int, int], angle: float, offset: Tuple[float, float] = (0, 0)) -> Structure`
-
-  * Builds a twisted heterostructure with given cell parameters, twist angle, and lateral offset.
-
-## Analysis Module
+Analysis Module
+---------------
 
 .. autosummary::
-\:toctree: api/analysis
+   :toctree: api/analysis
+   :nosignatures:
 
-vdwtoolkit.analysis.bond\_angle
-vdwtoolkit.analysis.bond\_length
-vdwtoolkit.analysis.deformation
-vdwtoolkit.analysis.neighbor
-vdwtoolkit.analysis.registry\_index
-vdwtoolkit.analysis.post\_process
+   vdwtoolkit.analysis.bond_angle
+   vdwtoolkit.analysis.bond_length
+   vdwtoolkit.analysis.deformation
+   vdwtoolkit.analysis.neighbor
+   vdwtoolkit.analysis.registry_index
+   vdwtoolkit.analysis.post_process
 
-## Simulator Module
+Simulator Module
+----------------
 
 .. autoclass:: vdwtoolkit.simulator.Simulator
-\:members:
-\:show-inheritance:
+   :members:
+   :show-inheritance:
 
 .. autoclass:: vdwtoolkit.simulator.lammps.LAMMPS
-\:members:
+   :members:
 
 .. autoclass:: vdwtoolkit.simulator.gpumd.GPUMDRunner
-\:members:
+   :members:
 
 .. autoclass:: vdwtoolkit.simulator.vasp.VaspRunner
-\:members:
+   :members:
 
-## I/O Module
+I/O Module
+----------
 
 .. autosummary::
-\:toctree: api/io
+   :toctree: api/io
+   :nosignatures:
 
-vdwtoolkit.io.file\_format
-vdwtoolkit.io.reader
-vdwtoolkit.io.writer
+   vdwtoolkit.io.file_format
+   vdwtoolkit.io.reader
+   vdwtoolkit.io.writer
 
-## Utilities Module
+Utilities Module
+----------------
 
 .. autoclass:: vdwtoolkit.utils.constant
-\:members:
+   :members:
 
 .. autoclass:: vdwtoolkit.utils.frame.Frame
-\:members:
+   :members:
 
 .. autoclass:: vdwtoolkit.utils.materials
-\:members:
+   :members:
 
 .. autoclass:: vdwtoolkit.utils.timer.Timer
-\:members:
+   :members:
 
-## Note
-
-API pages are auto-generated with Sphinx `autodoc`. Use `make html` in the `docs` directory to build full documentation.
+.. note::
+   API pages are auto-generated with Sphinx `autodoc`. Run `make html` in the
+   `docs` directory to build the full documentation.
